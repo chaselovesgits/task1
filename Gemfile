@@ -7,10 +7,6 @@ gem 'selenium-webdriver'
 gem 'fileutils'
 gem 'sauce-cucumber'
 gem 'sauce-connect'
-gem "curb"
-gem "rmagick"
 gem "json"
-#gem 'sauce_whisk'
 gem "capybara-webkit"
 gem "headless"
-gem "gifanime"
