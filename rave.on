@@ -1,0 +1,1 @@
+DISPLAY=localhost:0.0 xvfb-run -a bundle exec cucumber --format json -o reports/cucumber.json --format pretty -c
