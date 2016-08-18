@@ -1,6 +1,7 @@
 
 Given(/^I am on the BookingBug Contact Us page$/) do
-  puts 'step 1'
+ visit('https://www.bookingbug.co.uk/contact')
+     expect(page).to have_content("Customer support enquiries", wait:30)
 end
 
 When(/^I navigate to the Contact Us page$/) do
