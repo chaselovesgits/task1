@@ -1,4 +1,3 @@
-
 source "https://rubygems.org"
 gem 'capybara',  '~>2.3.0'
 gem 'cucumber', '~>1.3.17' 
