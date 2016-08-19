@@ -16,7 +16,7 @@ When(/^I submit just an email address and some message text$/) do
 end
 
 When(/^all other fields are blank$/) do
-  find('mktoButton').click
+  find('Submit').click
 end
 
 Then(/^I should see errors about other required fields$/) do
