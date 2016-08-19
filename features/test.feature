@@ -1,17 +1,26 @@
 @test
-Feature: Contact Us Page
-As an end user that is curious about BookingBug
-I want to browse a contact us page
-So that I can find contact details
-And get in touch to find out more
-
-	Scenario: Accurate Address
-		Given I am on the BookingBug Contact Us page
-		When I navigate to the Contact Us page
-		Then I should see an accurate post code "EC1R 5EJ"
-
-	Scenario: Submission Vaildation
-		Given I am on the BookingBug Contact Us page
-		When I submit just an email address and some message text
-		And all other fields are blank
-		Then I should see errors about other required fields
+ Given(/^I am on the BookingBug Contact Us page$/) do
+  visit('https://www.bookingbug.co.uk/contact')
+      expect(page).to have_content("Customer support enquiries", wait:30)
+ end
+ 
+ When(/^I navigate to the Contact Us page$/) do
+   puts 'step 2'
+ end
+ 
+  Then(/^I should see an accurate post code "([^"]*)"$/) do |arg1|
+    puts 'step 3'
+  end
+ +When(/^I submit just an email address and some message text$/) do
+ +  fill_in('Email', :with => 'cmilano@bookingbug.com')
+ +  fill_in('Notes__c', :with => 'blah blah blah')
+ +end
+ +
+ +When(/^all other fields are blank$/) do
+ +  click_button('submit')
+ +end
+ +
+ +Then(/^I should see errors about other required fields$/) do
+ +  page.should have_content('This field is required')
+ +end
+ +
