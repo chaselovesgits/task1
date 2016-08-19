@@ -16,7 +16,7 @@ When(/^I submit just an email address and some message text$/) do
 end
 
 When(/^all other fields are blank$/) do
-  find('Submit').click
+  find(:xpath, "//*[@id="mktoForm_1039"]/div[8]/span/button")]").click
 end
 
 Then(/^I should see errors about other required fields$/) do
