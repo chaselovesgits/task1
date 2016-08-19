@@ -14,10 +14,11 @@ end
 When(/^I submit just an email address and some message text$/) do
   fill_in('Email', :with => 'cmilano@bookingbug.com')
   fill_in('Notes__c', :with => 'blah blah blah')
+  sleep 2
 end
 
 When(/^all other fields are blank$/) do
-#binding.pry
+binding.pry
 find('button.mktoButton', wait:5).click
 end
 
