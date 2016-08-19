@@ -18,8 +18,7 @@ When(/^I submit just an email address and some message text$/) do
 end
 
 When(/^all other fields are blank$/) do
-binding.pry
-find('button.mktoButton', wait:5).click
+  click_button('submit', wait:5)
 end
 
 Then(/^I should see errors about other required fields$/) do
