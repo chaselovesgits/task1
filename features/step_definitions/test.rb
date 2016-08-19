@@ -17,7 +17,7 @@ When(/^I submit just an email address and some message text$/) do
 end
 
 When(/^all other fields are blank$/) do
-  click_button('submit')
+  click_button('Submit')
 end
 
 Then(/^I should see errors about other required fields$/) do
