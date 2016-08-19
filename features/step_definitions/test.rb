@@ -14,11 +14,10 @@ end
 When(/^I submit just an email address and some message text$/) do
   fill_in('Email', :with => 'cmilano@bookingbug.com')
   fill_in('Notes__c', :with => 'blah blah blah')
-  sleep 2
 end
 
 When(/^all other fields are blank$/) do
-  click_button('submit', wait:5)
+  click_button('submit', wait:10)
 end
 
 Then(/^I should see errors about other required fields$/) do
