@@ -21,6 +21,6 @@ When(/^all other fields are blank$/) do
 end
 
 Then(/^I should see errors about other required fields$/) do
-  page.should have_content('This field is required')
+  expect(page).to have_content('This field is required')
 end
 
