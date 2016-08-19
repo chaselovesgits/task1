@@ -1,4 +1,4 @@
-@test
+
  Given (/^I am on the BookingBug Contact Us page$/) do
   visit('https://www.bookingbug.co.uk/contact')
       expect(page).to have_content("Customer support enquiries", wait:30)
