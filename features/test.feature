@@ -1,3 +1,4 @@
+@test
 Feature: Contact Us Page
 As an end user that is curious about BookingBug
 I want to browse a contact us page
