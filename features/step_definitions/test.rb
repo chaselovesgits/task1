@@ -4,10 +4,11 @@ Given(/^I am on the BookingBug Contact Us page$/) do
 end
 
 When(/^I navigate to the Contact Us page$/) do
-  puts 'step 2'
+ puts 'step 2'
 end
 
 Then(/^I should see an accurate post code "(EC1R 5EJ)"$/) do |arg1|
+	expect(page).to have_content("EC1R 5EJ", wait:5)
   puts 'step 3'
 end
 When(/^I submit just an email address and some message text$/) do
@@ -16,7 +17,7 @@ When(/^I submit just an email address and some message text$/) do
 end
 
 When(/^all other fields are blank$/) do
-  page.find(:xpath, '//*[@id="mktoForm_1039"]/div[8]/span/button').click
+  page.find_button('Submit').click
 end
 
 Then(/^I should see errors about other required fields$/) do
