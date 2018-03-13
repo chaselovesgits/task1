@@ -1,27 +1,21 @@
-Given(/^I am on the BookingBug Contact Us page$/) do
- visit('https://www.bookingbug.co.uk/contact')
-     expect(page).to have_content("Customer support enquiries", wait:30)
+Given(/^I am a twitter user on the login page$/) do
+  visit('https://twitter.com/login')
+  page.should have_content('Log in to Twitter')
 end
 
-When(/^I navigate to the Contact Us page$/) do
- puts 'step 2'
+When(/^I sign in/) do
+ fill_in "Phone, email or username", :with => "chasemils"
+ fill_in "Password", :with => "dummypassword"
+ find_button('Log in').click
+ page.should have_content('Moments')
+
 end
 
-Then(/^I should see an accurate post code "(EC1R 5EJ)"$/) do |arg1|
-	expect(page).to have_content("EC1R 5EJ", wait:5)
-  puts 'step 3'
-end
-When(/^I submit just an email address and some message text$/) do
-  fill_in('Email', :with => 'cmilano@bookingbug.com')
-  fill_in('Notes__c', :with => 'blah blah blah')
+And(/^I am on the homepage$/) do
+page.should have_content('Moments')
 end
 
-When(/^all other fields are blank$/) do
-  page.find_button('Submit').click
+Then(/^I should see the number of notifications I have$/) do
+  $numberofnotifications = find('span[class="count-inner"]').text
+  puts "You have #{$numberofnotifications} notifications"
 end
-
-Then(/^I should see errors about other required fields$/) do
-  page.should have_content('This field is required.')
-end
-
-
