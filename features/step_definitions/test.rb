@@ -16,6 +16,10 @@ page.should have_content('Moments')
 end
 
 Then(/^I should see the number of notifications I have$/) do
-  $numberofnotifications = find('span[class="count-inner"]').text
+  if page.has_css?('span[class="count-inner"]')
+	$numberofnotifications = find('span[class="count-inner"]').text
+else
+	$numberofnotifications = '0'
+end
   puts "You have #{$numberofnotifications} notifications"
 end
